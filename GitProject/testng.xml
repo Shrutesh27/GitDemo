@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--strting tag suite-->
+<suite name="Loan Department" parallel="tests" thread-count="2">
+<!-- parallel ="tests" what we wnat to run parllel thread-count="2" Run 2 test cases prallel-->	
+<!-- Also find belwo in Personal load test classes can be run parallel way-->
+	<listeners>
+		<listener class-name="test.Listeners"/>
+	</listeners>
+	
+  <parameter name="URL" value="qaclickacademy.com"></parameter><!--Declared at suite level which used fro weblogin from day 3-->
+  
+  <test name="Personal loan.com" parallel="classes" thread-count="2" > <!--Folder name-->
+ 
+  <parameter name="URL" value="personalLoan"></parameter>
+  <parameter name="API Key" value="12345678"/>
+    
+    <classes>
+      <class name="test.Basic_Day1"/><!--All class name can be here if want to run simultaniously-->
+      <class name="test.Day2"/>
+      <class name="test.Day4">
+		  <methods><!--If we want to run any test method then use Include-->
+				 	<include name="WebLoginHomeLoan"></include>
+			  </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+ 
+  <test name="Car Loan">
+	  <parameter name="URL" value="carloan.com"></parameter>
+	  <classes>
+		  <class name="test.Day3">
+			  <methods><!--If we dont want to run any test method then use Exclude-->
+				 	<exclude name="API.*"></exclude><!-- for any spicific use name of method ex:-mobileLogin -->
+<!--If we dont want to run any test method where test name starts with "mobile then use mobile.*"" then use Exclude-->
+			  </methods>
+		  </class>
+	  </classes>
+  </test>
+
+</suite> <!-- Suite -->
+
+
+
+
+
+
