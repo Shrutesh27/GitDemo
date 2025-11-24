@@ -15,6 +15,7 @@ public class Day2 {
 	public void prerequisite()
 	{
 		System.out.println("I will execute first");
+		System.out.println("I will execute 2nd");
 	}
 	@AfterClass
 	public void afterclass()
