@@ -17,6 +17,11 @@ public class Day2 {
 		System.out.println("I will execute first");
 		System.out.println("I will execute 2nd");
 	}
+	@Test
+	public void gitBranch()
+	{
+		System.out.println("Git new branch");
+	}
 	@AfterClass
 	public void afterclass()
 	{
