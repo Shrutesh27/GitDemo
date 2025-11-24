@@ -30,6 +30,14 @@ public class Basic_Day1 {
 	public void secondtest()
 	{
 		System.out.println("Bye");
+		System.out.println("Hello");
+	}
+
+	@Test(groups = {"Smoke"})
+	public void secondtest2()
+	{
+		System.out.println("Bye");
+		System.out.println("Hello");
 	}
 	
 	@AfterSuite
